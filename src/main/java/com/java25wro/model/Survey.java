@@ -9,7 +9,7 @@ public class Survey extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "surveyid")
+    @Column(name = "survey_id")
     private Long id;
 
     @Column(name = "descripiton")
