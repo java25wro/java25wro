@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 
 @RestController
@@ -25,7 +26,7 @@ public class MealController {
     }
 
     @GetMapping(value = "/restaurant/{restaurantId}")
-    public Meal findMealsByRestaurantId(@PathVariable Long restaurantId) {
+    public Set<Meal> findMealsByRestaurantId(@PathVariable Long restaurantId) {
         return mealService.findMealsByRestaurantId(restaurantId);
     }
 
