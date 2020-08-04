@@ -13,6 +13,7 @@ public class Restaurant extends BaseEntity {
     @Column( unique = true)
     String name;
     String address;
+    String type;
     String email;
 
     private boolean deleted = false;
