@@ -16,7 +16,6 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
     @Bean
     public HttpMessageConverter<BufferedImage> createImageHttpMessageConverter() {
         return new BufferedImageHttpMessageConverter();
@@ -27,9 +26,25 @@ public class Application {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/barcode").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/barcode/generate/{barcode}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/barcode/save/{orderID}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/customers").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/customers/{id}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/meal").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/meal/restaurant/{restaurantId}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/meal/{mealId}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/order").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/order/{order_Id}").allowedOrigins("http://localhost:4200");
                 registry.addMapping("/restaurants").allowedOrigins("http://localhost:4200");
                 registry.addMapping("/restaurants/{name}").allowedOrigins("http://localhost:4200");
-                registry.addMapping("/restaurant/{restaurantId}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/survey").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/survey/all").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/survey/{surveyid}").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/delete/{surveyid}").allowedOrigins("http://localhost:4200");
+
+
+
             }
         };
     }

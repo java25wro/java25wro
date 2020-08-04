@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/restaurants")
 public class RestaurantController {
 
