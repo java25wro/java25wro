@@ -21,13 +21,15 @@ public class Application {
         return new BufferedImageHttpMessageConverter();
 
     }
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**");
+                registry.addMapping("/**").allowedMethods("HEAD","POST","GET","PUT","PATCH","DELETE");
             }
         };
     }
+
 }
