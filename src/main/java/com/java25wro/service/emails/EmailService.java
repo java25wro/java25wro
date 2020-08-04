@@ -1,6 +1,5 @@
 package com.java25wro.service.emails;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.java25wro.model.Order;
 import com.java25wro.model.OrderedMeals;
